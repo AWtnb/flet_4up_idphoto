@@ -126,7 +126,7 @@ def main(page: ft.Page):
     ###################################
 
     ui_rows = [ft.Text(
-        "github.com/AWtnb/",
+        "github.com/AWtnb/flet_4up_idphoto",
         style="labelSmall",
         weight="bold",
         color=ft.colors.BLUE_900,
