@@ -53,7 +53,7 @@ def main(page: ft.Page):
     file_picker = ft.FilePicker(on_result=on_file_picked)
     page.overlay.append(file_picker)
 
-    def show_file_picker(_: ft.FilePickerResultEvent):
+    def show_file_picker(_: ft.ControlEvent):
         file_picker.pick_files(
             allow_multiple=False,
             file_type="custom",
@@ -78,7 +78,7 @@ def main(page: ft.Page):
     folder_picker = ft.FilePicker(on_result=on_folder_picked)
     page.overlay.append(folder_picker)
 
-    def show_pick_folder(_: ft.FilePickerResultEvent):
+    def show_pick_folder(_: ft.ControlEvent):
         folder_picker.get_directory_path()
 
     ui_rows.append(ft.Row(controls=[
@@ -91,7 +91,7 @@ def main(page: ft.Page):
     # execute button
     ###################################
 
-    def execute(_):
+    def execute(_: ft.ControlEvent):
         if not target_file.current.value or not output_folder.current.value:
             return
         result_message.current.value = ""
