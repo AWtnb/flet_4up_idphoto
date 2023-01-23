@@ -96,7 +96,7 @@ def main(page: ft.Page):
             return
         result_message.current.value = ""
         page.update()
-        if str(Path(target_file.current.value).suffix)[1:] in image_extensions:
+        if str(Path(target_file.current.value).suffix)[1:].lower() in image_extensions:
             ui_controls.disabled = True
             allocate(
                 target_file.current.value,
